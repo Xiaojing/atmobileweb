@@ -1,0 +1,32 @@
+<?php
+$page->title("MIT Stellar: " . idName($id, $course))
+     ->header("Stellar");
+
+$page->content_begin();
+?>
+
+	<!--The following orignial code was commented by Xioajing at 3:42pm on 06/11/09 to display Chinese character in the course title.
+    <h2><?=name($course)?> (<?=idName($id, $course)?>)</h2>
+     -->
+     <!--The following code was added by Xioajing at 3:42pm on 06/11/09 to display Chinese character in the course title. -->
+	<h2><?=$course[name]?> (<?=idName($id, $course)?>)</h2>
+
+	<p class="nav">
+            <? if($has_classes) { ?>
+                <? foreach($classes as $class) { ?>
+		    <a href="<?=detailURL($class, selfURL())?>"><?=longID($class)?>: <?=className($class)?></a><br/>
+                <? } ?>
+            <? } else { ?>
+                No Stellar sites available for this department
+            <? } ?>
+	</p>
+	
+        <? if($back) { ?>
+  	   <p class="paging">
+		<a href="<?=coursesURL($back)?>">&lt; Back</a>
+	   </p>
+        <? } ?>
+<?
+$page->content_end();
+$page->nav_link("./", "课程信息主页");
+?>

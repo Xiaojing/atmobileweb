@@ -1,0 +1,36 @@
+<?php
+$page->title("MIT Stellar: " . idName($id, $course))
+     ->header("课程 Podcasts");
+
+$page->content_begin();
+?>
+	<!--The following orignial code was commented by Xioajing at 3:42pm on 06/11/09 to display Chinese character in the course title.
+    <h2><?=name($course)?> (<?=idName($id, $course)?>)</h2>
+     -->
+     <!--The following code was added by Xioajing at 3:42pm on 06/11/09 to display Chinese character in the course title. -->
+	<h2><?=$course[name]?> (<?=idName($id, $course)?>)</h2>
+
+	<p class="nav">
+			<!--The following code was commented by Xioajing at 4:13pm on 06/11/09 to stop getting class info from MIT Stellar website 
+            <? if($has_classes) { ?>
+                <? foreach($classes as $class) { ?>
+		    <a href="<?=detailURL($class, selfURL())?>"><?=longID($class)?>: <?=className($class)?></a><br/>
+                <? } ?>
+            <? } else { ?>
+                No Stellar sites available for this department
+            <? } ?>
+			-->
+			<a href="feed/rss.xml">技术与战争</a><br/>
+			<a href="feed/AIFeed.xml">人工智能</a><br/>
+
+	</p>
+	
+        <? if($back) { ?>
+  	   <p class="paging">
+		<a href="<?=coursesURL($back)?>">&lt; 返回</a>
+	   </p>
+        <? } ?>
+<?
+$page->content_end();
+$page->nav_link("./", "课程Podcasts 主页");
+?>

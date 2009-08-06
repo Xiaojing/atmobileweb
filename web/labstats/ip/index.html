@@ -1,0 +1,32 @@
+<?php
+require "http://clstats.cc.nd.edu/public/data.jsp";
+ 
+$page->title('ND Lab Stats')
+     ->navbar_image('title-map')
+     ->breadcrumbs('Lab Stats')
+     ->breadcrumb_home();
+
+$page->content_begin();
+?>
+	
+	<div class="nonfocal">
+		<p>Information updated <?=$today['hour']?>: <?=$today['minute']?> <?=$today['am_pm']?> on <?=$today['day_3Let']?> <?=$today['date']?></p>
+	</div>
+	
+	<ul class="nav">
+            <? foreach($categorys as $category => $title) { ?>    
+		<li>
+			<a href="<?=labstatsURL($category)?>"><?=$title?> 
+				<span class="smallprint">
+				<SCRIPT TYPE="TEXT/JAVASCRIPT">
+					var text = lookup('<?=$category?>','lab_available');
+					document.write (text);
+				</SCRIPT> Available
+				</span>
+			</a>
+		</li>
+
+            <? } ?>
+	</ul>
+	
+<? $page->content_end(); ?>

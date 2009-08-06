@@ -1,0 +1,96 @@
+<?
+require "http://clstats.cc.nd.edu/public/data.jsp";
+/*
+$bbox = iPhoneBBox();
+$select_bbox = iPhoneSelectBBox();
+$mapLayers = layers();
+
+$bbox_script =<<<JS
+     var mapSelect = '$selectvalue';
+     var initMapBoxW = {$bbox["minx"]};
+     var initMapBoxN = {$bbox["maxy"]};
+     var initMapBoxS = {$bbox["miny"]};
+     var initMapBoxE = {$bbox["maxx"]};
+     var selectMapBoxW = {$select_bbox["minx"]};
+     var selectMapBoxN = {$select_bbox["maxy"]};
+     var selectMapBoxS = {$select_bbox["miny"]};
+     var selectMapBoxE = {$select_bbox["maxx"]};
+     var photoURL = '$photoURL';	// If there's no photo, set to ""
+     var mapOptions = "&selectfield={$types['field']}&selectlayer={$types['type']}";
+     var mapLayers = "$layers";
+JS;
+
+$bbox_script =<<<JS
+	var inUse = lookup('4','lab_inuse')
+	document.write (inUse);
+     
+JS;
+*/
+
+$page->title('ND LabStats: Details')
+     ->navbar_image('title-map')
+     ->not_scalable()
+     ->add_stylesheet('styles/map-ip')
+     /*->add_inline_script($bbox_script) */
+     ->add_javascript('../ip/uiscripts-ip')
+     ->add_javascript('javascripts/map-ip')
+     ->breadcrumbs('LabStats Details')
+     ->extra_onload("loadImage(getMapURL(mapBaseURL),'mapimage');");
+
+$page->content_begin();
+?>
+
+<div class="nonfocal">
+	<p>Information updated <?=$today['hour']?>: <?=$today['minute']?> <?=$today['am_pm']?> on <?=$today['day_3Let']?> <?=$today['date']?></p>
+</div>
+<ul class="nav">
+	<li>
+		<div class="label">In Use</div>
+		<div class="value">
+			<SCRIPT TYPE="TEXT/JAVASCRIPT">
+				var text = lookup(<?php echo $labid?>,'lab_inuse');
+				document.write (text);
+			</SCRIPT>
+		</div>
+	</li>
+	<li>
+		<div class="label">Available</div>
+		<div class="value">
+			<SCRIPT TYPE="TEXT/JAVASCRIPT">
+				var text = lookup(<?php echo $labid?>,'lab_available');
+				document.write (text);
+			</SCRIPT>
+		</div>
+	</li>
+	<li>
+		<div class="label">Total</div>
+		<div class="value">
+			<SCRIPT TYPE="TEXT/JAVASCRIPT">
+				var text = lookup(<?php echo $labid?>,'lab_total');
+				document.write (text);
+			</SCRIPT>
+		</div>
+	</li>
+	<li>
+		<div class="label">Offline</div>
+		<div class="value">
+			<SCRIPT TYPE="TEXT/JAVASCRIPT">
+				var text = lookup(<?php echo $labid?>,'lab_offline');
+				document.write (text);
+			</SCRIPT>
+		</div>
+	</li>
+</ul>
+
+<?
+$page->content_end();
+
+/*
+$script =<<<JS
+	var text = lookup('4','lab_inuse')
+	document.write (text);
+JS;
+
+$page->footer_script($script);
+*/
+?>

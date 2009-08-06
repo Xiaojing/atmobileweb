@@ -1,0 +1,11 @@
+<? 
+$page->title('Library: Search Results')
+     ->header('书目搜索结果');
+
+$page->content_begin();
+
+$content->output($book);
+
+$page->content_end();
+$page->nav_link('./', "图书馆主页");
+?>

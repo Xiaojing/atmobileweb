@@ -1,0 +1,10 @@
+
+	<ul class="results">
+              <? foreach($results as $book) { ?>
+		     <li>
+				<a href="<?=bookdetail_url($book)?>"><?=$book['title']?></a><br/>
+             </li>
+	      <? } ?>
+	</ul>
+	
+	

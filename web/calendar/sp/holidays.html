@@ -1,0 +1,31 @@
+<?php
+$page->title("Events Calendar: Holidays")
+     ->header('节假日历');
+
+$page->content_begin();
+?>
+
+	<h2>大学节假日安排 <strong><?=$year?></strong></h2>
+
+	<p class="nonfocal">
+           <? if($has_prev) { ?><a href="<?=holidaysURL($prev)?>">&lt; <?=$prev?></a><? } if($has_prev && $has_next) { ?>&nbsp;|&nbsp;<? } if($has_next) { ?><a href="<?=holidaysURL($next)?>"><?=$next?> &gt;</a><? } ?>
+        </p>
+
+	<div class="focal">
+            <? for($cnt=0; $cnt < count($holidays); $cnt += 2) { ?>
+                <p>
+	               <!-- The following original code was commented by Xiaojing at 12:07pm on 07/08/09 to not display the weekday on the holiday calendar
+                   <span class="date"><?=weekday($holidays[$cnt], $year)?> <?=$holidays[$cnt]?>, <?=$year?></span><br/>
+				-->
+				   <span class="date"><?=$holidays[$cnt]?>, <?=$year?></span><br/>
+                   <?=$holidays[$cnt+1]?>
+                </p>
+            <? } ?>
+	</div>
+<?
+
+$page->content_end();
+$page->nav_link("./", "校园日历主页");
+//$page->extra_link(religiousURL(), "Student Absences for Religious Observances");
+
+?>

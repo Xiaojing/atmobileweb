@@ -1,0 +1,69 @@
+<?php
+$page->title('Library')
+     ->header('书目详细信息');
+
+class Item {
+    private $book;
+    private $first = True;
+
+    public function __construct($book) {
+        $this->book = $book;
+    }
+
+    public function normal($label, $field, $href=NULL, $class=NULL) {
+        foreach($this->book[$field] as $value) {
+          if($this->first) {
+            $this->first = False;
+          } else {
+            echo '<br />';
+          }
+          ?>
+            <span class="label"><?=$label?></span>
+	    <span class="value"><?
+                   if($href != NULL) {
+                       echo '<a href="' . $href($value) . '" class="' . $class . '">';
+                   }
+                   echo $value;
+                   if($href != NULL) {
+                       echo "</a>";
+                   }
+                 ?></span>
+          <?
+        }
+    }
+}
+$item = new Item($book);
+
+$page->content_begin();
+?>
+<!-- The following original code was commented by Xiaojing at 4:53pm on 07/06/09.
+	<p class="nav">
+            <?
+              $item->normal('title', 'title');
+              $item->normal('author', 'author');              
+              $item->normal('year', 'year');              
+              $item->normal('location', 'location', 'locationHREF', 'phone');         
+  
+              $item->normal('call_number', 'call_number');
+            ?>
+	</p>
+-->
+<!-- The following code was added by Xiaojing at 4:54pm on 07/06/09 to display the detailed book info -->
+<p class="nav">
+<span class="label">名称: </span>
+<span class="value"><?=$book['title']?><br /></span>
+<span class="label">作者: </span>
+<span class="value"><?=$book['author']?><br /></span>
+<span class="label">年份: </span>
+<span class="value"><?=$book['year']?><br /></span>
+<span class="label">藏处: </span>
+<span class="value"><?=$book['location']?><br /></span>
+<span class="label">借阅号: </span>
+<span class="value"><?=$book['call_number']?><br /></span>
+</p>
+<? 
+
+$page->content_end(); 
+$page->nav_link("index.php", "图书馆主页");
+
+?>

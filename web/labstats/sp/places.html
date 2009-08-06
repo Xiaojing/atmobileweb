@@ -1,0 +1,18 @@
+<?
+$page->title("MIT Map: Browse $title")
+     ->header("校园地图");
+
+$page->content_begin();
+?>
+	<h2><?=$title?></h2>
+	
+	<p class="nav">
+             <? foreach($places as $name => $number) { ?>
+		<a href="<?=detailURL($number, $name)?>"><?=$name?></a><br/>
+             <? } ?>
+	</p>
+<?
+$page->content_end();
+$page->nav_link('./', "校园地图主页");
+?>
+

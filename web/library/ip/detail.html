@@ -1,0 +1,80 @@
+<?php
+$page->title('Library: Details')
+     ->navbar_image('title-stellar')
+     ->breadcrumbs('Search', 'Details');
+
+class Item {
+    private $book;
+
+    public function __construct($book) {
+        $this->book = $book;
+    }
+
+    public function display($label, $field, $href=NULL, $class=NULL, $group=False) {
+        foreach($this->book[$field] as $value) {
+          ?>
+            <? if(!$group) { ?>  <ul class="nav">    <? } ?>
+              <li>
+                 <? if($href != NULL) {                   
+                     echo '<a href="' . $href($value) . '" class="' . $class . '">';
+                 } ?>
+
+                 <div class="label"><?=$label?></div>
+                 <div class="value"><?=$value?></div>
+
+                 <? if($href != NULL) {                   
+                       echo "</a>";
+                 } ?>
+              </li>
+            <? if (!$group) { ?>  </ul>  <? } ?>   
+          <?
+        }
+    }
+}             
+$item = new Item($book);
+
+$page->content_begin();
+?>
+<!--
+	<ul class="nav">
+              <?  $item->display('name', 'fullname', NULL, NULL, True); ?>
+              <?  $item->display('title', 'title', NULL, NULL, True); ?>
+              <?  $item->display('dept', 'dept', NULL, NULL, True); ?>
+	</ul>
+	
+        <? if(has_phone($person)) { ?>
+           <ul class="nav">
+             <?  $item->display('home', 'homephone', "phoneHREF", 'phone', True);   ?>      
+             <?  $item->display('phone', 'telephone', "phoneHREF", 'phone', True);  ?>
+             <?  $item->display('fax', 'fax', "phoneHREF", 'phone', True);  ?>
+           </ul>
+        <? } ?>
+
+        <?
+           $item->display('address', 'address');             
+           $item->display('email', 'email', "mailHREF", 'email');             
+           $item->display('office', 'room', "mapHREF", 'map');
+
+        ?>
+-->
+<ul class="nav">
+	<li>
+		<div class="label">Title:</div>
+		<div class="value"><?=$book['title']?></div>
+	</li>
+	<li>
+		<div class="label">Year:</div>
+		<div class="value"><?=$book['year']?></div>
+	</li>
+	<li>
+		<div class="label">Location:</div>
+		<div class="value"><?=$book['location']?></div>
+	</li>
+	<li>
+		<div class="label">Call No.:</div>
+		<div class="value"><?=$book['call_number']?></div>
+	</li>		
+</ul>
+
+<? $page->content_end(); ?>
+

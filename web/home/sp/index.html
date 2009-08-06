@@ -1,0 +1,73 @@
+<?='<?xml version="1.0" encoding="UTF-8"?>'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN" "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="content-type" content="application/xhtml+xml"; charset=UTF-8" />
+	<title>MIT Mobile Web</title>
+	<link rel="stylesheet" type="text/css" href="../<?=$phone?>/<?=$phone?>.css" />
+</head>
+
+<body>
+
+<h2 id="header">
+<img src="../<?=$phone?>/images/mit-logo.gif" width="<?=$width?>" height="<?=$height?>" />Mobile Web
+</h2>
+<!-- The following original cde was commented by Xiaojing at 6:41pm on Jun 16 to show pics
+<p class="bb"> </p>
+
+<p class="nav">
+	<a href="../people/" accesskey="1"><img src="sp/images/people.png" width="40" height="40" alt="People Directory" />1: People Directory</a><br/>
+	<a href="../map/" accesskey="2">2: Campus Map</a><br/>
+	<a href="../shuttleschedule/" accesskey="3">3: Shuttle Schedule</a><br/>
+	<a href="../calendar/" accesskey="4">4:校园日历</a><br/>    
+	<a href="../stellar/" accesskey="5">5: Stellar</a> <span class="smallprint">(class info)</span><br/>    
+	<a href="../careers/" accesskey="6">6: Student Career Services</a><br/>
+	<a href="../emergency/" accesskey="7">7: Emergency Info</a><br/>
+	<a href="../3down/" accesskey="8">8: 3DOWN</a> <span class="smallprint">(services status)</span><br/>
+	<a href="../links/" accesskey="9">9: Useful Links</a><br/>
+    <a href="../podcasts/" accesskey="10">10: 课程 Podcasts</a></p>
+-->
+
+<!-- The following cde was added by Xiaojing at 6:41pm on Jun 16 to show pics -->
+<div id="container">
+
+	<table cellpadding="0" cellspacing="0" border="0" id="homegrid">
+		<tr>
+			<td><a style="text-decoration:none" href="../people/" accesskey="1"><img src="sp/images/people.png" width="50" height="50" alt="People Directory" /><br/>People Directory</a></td>
+			<td><a style="text-decoration:none" href="../map/" accesskey="2"><img src="ip/images/map.png" width="50" height="50" alt="Map" /><br/>Campus Map</a></td>
+			<td><a style="text-decoration:none" href="../shuttleschedule/" accesskey="3"><img src="ip/images/shuttletrack.png" width="50" height="50" alt="Shuttle Schedule" /><br/>Buss Schedule</a></td>			
+		</tr>
+		<tr>
+        	<td><a style="text-decoration:none" href="../calendar/" accesskey="4"><img src="ip/images/calendar.png" width="50" height="50" alt="Events Calendar" /><br/>Calendar</a></td>
+			<td><a style="text-decoration:none" href="../stellar/" accesskey="5"><img src="ip/images/stellar.png" width="50" height="50" alt="Stellar" /><br/>Stellar<br/></a></td>
+            <td><a style="text-decoration:none"  href="../podcasts/" accesskey="6"><img src="ip/images/webmitedu.png" width="50" height="50" alt="web.mit.edu" /><br/>Prayercasts</a></td>
+		
+		</tr>
+		<tr>
+        	<td><a style="text-decoration:none" href="../library/" accesskey="7"><img src="ip/images/careers.png" width="50" height="50" alt="Career Services" /><br/>Library</a></td>	
+			<td><a style="text-decoration:none" href="../3down/" accesskey="8"><img src="ip/images/3down.png" width="50" height="50" alt="3DOWN" /><br/>3DOWN<br/><span class="fineprint">service status</span></a></td>
+			<td><a style="text-decoration:none" href="../links/" accesskey="9"><img src="ip/images/links.png" width="50" height="50" alt="Links" /><br/>Useful<br/>Links</a></td>			
+        </tr>
+        <tr>
+        	<td><a style="text-decoration:none" href="../emergency/" accesskey="10"><img src="ip/images/emergency.png" width="50" height="50" alt="Emergency Info" /><br/>Emergency Info</a></td>
+        	<td><a style="text-decoration:none" href="../mobile-about/" accesskey="11" ><img src="ip/images/about.png" width="50" height="50" alt="About" /><br/>About this Site</a></td>			
+			<td><a style="text-decoration:none" href="http://ca.mit.edu" accesskey="12"><img src="ip/images/certificates.png" width="50" height="50" alt="MIT Certificates" /><br/>MIT Certificates</a></td>
+		</tr>
+        </tr>
+
+	</table>
+			
+</div>
+<p class="nav secondary">
+	<a href="../mobile-about/">About the MIT Mobile Web</a><br/>
+	<? if($phone == 'sp') { ?>
+		<a href="http://web.mit.edu">Go to web.mit.edu</a><br/>
+	<? } ?>
+</p>
+
+<p id="footer">
+	<img src="../<?=$phone?>/images/ist-logo.gif" width="26" height="18" alt="IST" />Information Services &amp; Technology
+</p>
+
+</body>
+</html>

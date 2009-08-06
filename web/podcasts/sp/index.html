@@ -1,0 +1,32 @@
+<?php
+$page->title('iUniversity Podcasts')
+     ->header("Stellar");
+
+$page->content_begin();
+?>
+
+	<form method="get" action="search.php">
+	
+	<p>随时随地观看 ／聆听 课堂录像 ／录音.</p>	
+
+	<p class="nav">
+		<a href="<?=coursesURL("1-10")?>" accesskey="1">1. 课程 1-10</a><br/>
+		<a href="<?=coursesURL("11-20")?>" accesskey="2">2. 课程 11-20</a><br/>
+		<a href="<?=coursesURL("21-24")?>" accesskey="3">3. 课程 21-24</a><br/>
+		<a href="<?=coursesURL("other")?>" accesskey="4">4. 其它课程</a><br/>
+	</p>
+	
+	<p>
+		<strong>根据课程序号 ／ 名称查询:</strong><br/>
+		<span class="inputcombo">
+			<input class="forminput" type="search" id="filter" name="filter" />
+			<input id="type" name="type" type="hidden" value="name" />
+			<input id="group" name="group" type="hidden" value="*" />
+			<input class="combobutton" name="sch_btn" id="sch_btn" type="submit" value="Search" />
+		</span>	
+	</p>
+
+<? $page->content_end();
+$page->nav_link("./", "课程 Podcasts 主页");
+?>
+</form>

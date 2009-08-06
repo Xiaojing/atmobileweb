@@ -1,0 +1,24 @@
+<?php
+$page->title("MIT Stellar: $title")
+     ->header("Stellar");
+
+$page->content_begin();
+?>
+
+	<h2><?=$title?></h2>
+
+	<p class="nav">
+        <!-- The following original code was commented by Xiaojing at 3:34pm on 06/11/09 to display courses name in Chinese character. 
+             <? foreach($courses as $id => $course) { ?>	    
+				<a href="<?=courseURL($id, $which)?>"><?=$courses[$id][name]?>(<?=idName($id, $course)?>)</a><br/>
+             <? } ?>
+		-->
+		<!-- The following original code was added by Xiaojing at 3:35pm on 06/11/09 to display courses name in Chinese character. -->
+		<? foreach($courses as $id => $course) { ?>	    
+			<a href="<?=courseURL($id, $which)?>"><?=$courses[$id][name]?>(<?=idName($id, $course)?>)</a><br/>
+         <? } ?>
+	</p>
+<?
+$page->content_end();
+$page->nav_link("./", "课程信息主页");
+?>

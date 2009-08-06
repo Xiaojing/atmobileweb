@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<!-- generator="Podcast Generator 1.1" -->
+		<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xml:lang="en" version="2.0">
+	<channel>
+		<title>测试课程 1</title>
+		<link>http://129.74.91.197/Podcastgen/</link>
+		<description>This is the description of your podcast... you can change it trough the administration area.</description>
+		<generator>Podcast Generator 1.1 - http://podcastgen.sourceforge.net</generator>
+	<lastBuildDate>Fri, 08 May 2009 16:12:18 -0400</lastBuildDate>
+		<language>en</language>
+		<copyright>Your copyright notice</copyright>
+		<itunes:image href="http://localhost/Podcastgen/images/itunes_image.jpg" />
+		<image>
+		<url>http://129.74.91.197/Podcastgen/images/itunes_image.jpg</url>
+		<title>Podcast Title</title>
+		<link>http://129.74.91.197/Podcastgen/</link>
+		</image>
+		<itunes:summary>This is the description of your podcast... you can change it trough the administration area.</itunes:summary>
+		<itunes:subtitle>This is the description of your podcast... you can change it trough the administration area.</itunes:subtitle>
+		<itunes:author>Test</itunes:author>
+		<itunes:owner>
+		<itunes:name>Test</itunes:name>
+		<itunes:email>test@nospam.com</itunes:email>
+		</itunes:owner>
+		<itunes:explicit>no</itunes:explicit>
+		<itunes:category text="Arts"> 
+			</itunes:category>
+			<item>
+								<title>Fifth Sunday of Lent</title>
+								<itunes:subtitle>Fifth Sunday of Lent</itunes:subtitle>
+								<itunes:summary><![CDATA[ Fifth Sunday of Lent ]]></itunes:summary>
+								<description>Fifth Sunday of Lent</description>
+								<link>http://129.74.91.197/Podcastgen/?p=episode&amp;name=2009-05-08_fifth_sunday_of_lent.mp4</link>
+								<enclosure url="http://129.74.91.197/Podcastgen/media/2009-05-08_fifth_sunday_of_lent.mp4" length="349682510" type="video/mp4"/>
+								<guid>http://129.74.91.197/Podcastgen/?p=episode&amp;name=2009-05-08_fifth_sunday_of_lent.mp4</guid>
+								<itunes:duration>68:00</itunes:duration>
+									<author>test@nospam.com (Test)</author>
+									<itunes:author>Test</itunes:author>
+									<pubDate>Fri, 08 May 2009 16:12:18 -0400</pubDate>
+								</item><item>
+								<title>Technology War and Terrorism</title>
+								<itunes:subtitle>1-01 MIT Teach-in on _Technology, War, and Terrorism,_ October 1, 2001</itunes:subtitle>
+								<itunes:summary><![CDATA[ 1-01 MIT Teach-in on _Technology, War, and Terrorism,_ October 1, 2001 ]]></itunes:summary>
+								<description>1-01 MIT Teach-in on _Technology, War, and Terrorism,_ October 1, 2001</description>
+								<link>http://129.74.91.197/Podcastgen/?p=episode&amp;name=2009-05-08_101_mit_teachin_on__technology_war_and_terrorism__october_1_2001.mp4</link>
+								<enclosure url="http://129.74.91.197/Podcastgen/media/2009-05-08_101_mit_teachin_on__technology_war_and_terrorism__october_1_2001.mp4" length="3377610" type="video/mp4"/>
+								<guid>http://localhost/Podcastgen/?p=episode&amp;name=2009-05-08_101_mit_teachin_on__technology_war_and_terrorism__october_1_2001.mp4</guid>
+								<itunes:duration>1:24</itunes:duration>
+									<author>test@nospam.com (Test)</author>
+									<itunes:author>Test</itunes:author>
+									<itunes:explicit>no</itunes:explicit>
+									<pubDate>Fri, 08 May 2009 16:06:57 -0400</pubDate>
+								</item></channel></rss>

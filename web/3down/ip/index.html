@@ -1,0 +1,37 @@
+<?php
+$page->title('MIT 3DOWN')
+     ->navbar_image('title-3down')
+     ->breadcrumbs('3DOWN')
+     ->breadcrumb_home();
+
+$page->content_begin();
+?>
+
+	<div class="nonfocal">
+		3DOWN shows the status of services available to the ND community.
+	</div>
+	
+	<ul class="nav">
+             <? foreach($states as $title => $state) { ?>
+		<li>
+                         <? if(is_long_text($state)) { ?>
+			<a href="<?=detailURL($title)?>"><h3><?=$title?></h3><span class="smallprint"><?=summary($state)?> <span class="more">more</span> (<?=short_date($state['date'])?>)</span></a> 				
+                        <? } else { ?>
+                           <div><h3><?=$title?></h3><span class="smallprint"><?=full($state)?> (<?=short_date($state['date'])?>)</span></div>
+                        <? } ?> 
+						<!--
+						<a href="<?=$state['url']?>"><h3><?=$title?></h3><span class="smallprint"><?=summary($state)?> <span class="more">more</span> (<?=short_date($state['date'])?>)</span></a>
+					-->
+		</li>
+             <? } ?>
+	
+	</ul>
+	
+	<ul class="secondary">
+		<li><a href="tel:16172534357" class="phone">Need answers?<br/><span class="smallprint">(574.631.8111)</span></a></li>
+		<!-- <li><a href="tel:16172531101" class="phone">Report other problems<br/><span class="smallprint">(617.253.1101)</span></a></li>-->
+		<li><a href="../emergency">Campus emergency information</a></li>
+		
+	</ul>
+	
+<? $page->content_end(); ?>

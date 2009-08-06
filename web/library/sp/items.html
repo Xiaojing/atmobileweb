@@ -1,0 +1,9 @@
+
+<p class="focal results"> 
+          <? foreach($results as $book) { ?>
+	          <!-- 
+              <a href="<?=detail_url($person)?>"><?=$person['surname'][0]?>, <?=$person['givenname'][0]?></a><br/>
+          -->
+			  <a href="<?=bookdetail_url($book)?>"><?=$book['title']?></a><br/>
+          <? } ?> 
+</p>

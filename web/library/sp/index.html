@@ -1,0 +1,34 @@
+<?php
+$page->title('Library')
+     ->header('图书馆');
+
+$page->content_begin();
+?>
+	<form method="get" action="<?=$_SERVER['SCRIPT_NAME']?>">
+
+	<p>
+		<strong>书目查询:</strong><br/>
+		<span class="inputcombo emphasized">
+			<input class="forminput" type="search" id="filter" name="filter" value="<?=$search_terms?>" />
+			<input class="combobutton" name="search" id="sch_btn" type="submit" value="Search" />
+		</span>	
+	</p>
+
+        <? if($failed_search) { ?>
+                <p>无查询结果</p>
+        <? } ?>
+	
+
+	<p class="legend">
+  	        <strong>查询小贴士:</strong> 你可根据书名，作者，或任意关键字查询
+	        (e.g.: 'william barton rogers', 'roge', 'wbrogers', '6172531000', '31000')
+	</p>			
+	</form>
+
+<? 
+$page->content_end(); 
+
+$page->extra_link("tel:16172531000", "咨询图书管理员: 617.253.1000", "phone")
+     ->extra_link("hours.php", "图书馆开放时间");
+
+?>

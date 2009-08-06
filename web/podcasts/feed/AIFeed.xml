@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+<channel>
+<title>人工智能 </title>
+<link>http://129.74.91.197/mobileweb/web/podcasts</link>
+<description>>人工智能</description>
+<lastBuildDate>Thu, 26 Apr 2007 19:41:48 -0400</lastBuildDate>
+<language>en-us</language>
+<copyright>2009-xiaojing</copyright>
+<managingEditor>xiaojing.duan@usm.edu</managingEditor>
+
+<generator>Fedafi.com Online Feed Builder V1.0</generator>
+<ttl>1</ttl>
+<item>
+<title>人工智能</title>
+<link>http://129.74.91.197/mobileweb/web/podcasts/movie/Human Computation.m4v</link>
+<enclosure url="http://129.74.91.197/mobileweb/web/podcasts/movie/Human Computation.m4v" length="15200000" type="video/mpeg"/>
+<pubDate>Thu, 26 Apr 2009 19:41:48 -0400</pubDate>
+<description>example</description>
+</item>
+</channel>
+</rss>

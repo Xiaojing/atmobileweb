@@ -1,0 +1,37 @@
+<?php
+$page->title('ND Prayercast')
+     ->navbar_image('title-emergency')
+     ->breadcrumbs('Prayercast')
+     ->breadcrumb_home();
+
+$page->content_begin();
+?>
+
+	<div class="nonfocal">
+		An online service of prayer in the catholic faith tradition of Notre Dame.
+	</div>
+	
+	<ul class="nav">
+             <? foreach($states as $title => $state) { ?>
+		<li>
+                        <!-- <? if(is_long_text($state)) { ?>
+			<a href="<?=detailURL($title)?>"><h3><?=$title?></h3><span class="smallprint"><?=summary($state)?> <span class="more">more</span> (<?=short_date($state['date'])?>)</span></a> 				
+                        <? } else { ?>
+                           <div><h3><?=$title?></h3><span class="smallprint"><?=full($state)?> (<?=short_date($state['date'])?>)</span></div>
+                        <? } ?> -->
+						<a href="<?=$state['url']?>"><h3><?=$title?></h3><span class="smallprint"><?=summary($state)?>(<?=short_date($state['date'])?>)</span></a>
+					
+		</li>
+             <? } ?>
+	
+	</ul>
+	
+	<ul class="secondary">
+		<li><a href="tel:15746317800" class="phone">Contact ND Prayercast?<br/><span class="smallprint">(574.631.7800)</span></a></li>
+		<li><a href="http://ndprayercast.org/">Go to NDPrayercast.org</a></li>
+		<!-- <li><a href="tel:16172531101" class="phone">Report other problems<br/><span class="smallprint">(617.253.1101)</span></a></li>
+		<li><a href="../emergency">Campus emergency information</a></li>-->
+		
+	</ul>
+	
+<? $page->content_end(); ?>

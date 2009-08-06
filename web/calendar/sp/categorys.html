@@ -1,0 +1,26 @@
+<?php
+$page->title("Events Calendar: Browse by Category")
+     ->header('校园日历');
+
+$page->content_begin();
+?>
+
+	<h2>根据种类浏览活动</h2>
+
+	<p class="nav">
+		<!-- 
+            <? foreach($categorys as $category) { ?>
+                <a href="<?=subCategorysURL($category)?>"><?=ucname($category->name)?></a><br/>
+            <? } ?>
+		-->
+		 <a href="<?=categoryURL("academic")?>">学术论坛</a><br/>
+		 <a href="<?=categoryURL("entertainment")?>">文体活动</a><br/>
+		 <a href="<?=categoryURL("meeting")?>">学校通告</a><br/>
+		 <a href="<?=categoryURL("news")?>">重要会议</a><br/>
+	</p>
+<?
+
+$page->content_end();
+$page->nav_link("./", "校园日历主页");
+
+?>

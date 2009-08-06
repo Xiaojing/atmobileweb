@@ -1,0 +1,51 @@
+<?php
+$page->title("Calendar: Browse by Category")
+     ->header('文体活动');
+
+$page->content_begin();
+?>
+
+	<!--The following original code was commented by Xiaojing at 11:02am on 07/09/09 to avoid get real-time data from MIT server
+	<h2>大学节假日安排 <strong><?=$year?></strong></h2>
+	<p class="nonfocal">
+           <? if($has_prev) { ?><a href="<?=holidaysURL($prev)?>">&lt; <?=$prev?></a><? } if($has_prev && $has_next) { ?>&nbsp;|&nbsp;<? } if($has_next) { ?><a href="<?=holidaysURL($next)?>"><?=$next?> &gt;</a><? } ?>
+        </p>
+
+	<div class="focal">
+	
+            <? for($cnt=0; $cnt < count($holidays); $cnt += 2) { ?>
+                <p>	               
+                   <span class="date"><?=weekday($holidays[$cnt], $year)?> <?=$holidays[$cnt]?>, <?=$year?></span><br/>
+
+				   <span class="date">全球金融体系面临的新挑战, 7月13日 14:30 </span><br/>
+                   <?=$holidays[$cnt+1]?>
+                </p>
+            <? } ?>
+
+	</div>
+	-->
+	<!--The following code was added by Xiaojing at 11:03am on 07/09/09 for the prototype purpose. -->
+	<div class="focal">
+		<h4> “赢在校园，职子花开”之五林秘籍大型现场职业咨询会</h4>
+		<ul>
+			<li>时间：6月17日 14:00 </li>
+			<li>地点：东川路800号闵行校区东区大转盘</li>
+		</ul>
+		<h4> “21世纪杯”全国英语演讲比赛交通大学校园选拔赛</h4>
+		<ul>
+			<li>时间：6月16日 10:44 </li>
+			<li>地点：建国西路691号建工锦江大酒店</li>
+		</ul>
+		<h4> 上戏毕业公演剧目青春京剧《倩女离魂》领票通告</h4>
+		<ul>
+			<li>时间：6月11日 19:00 </li>
+			<li>地点：上海银星皇冠假日酒店琥珀厅</li>
+		</ul>
+	</div>
+<?
+
+$page->content_end();
+$page->nav_link("./", "校园日历主页");
+//$page->extra_link(religiousURL(), "Student Absences for Religious Observances");
+
+?>

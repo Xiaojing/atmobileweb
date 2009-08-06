@@ -1,0 +1,28 @@
+<?php
+$page->title("MIT Stellar: " . idName($id, $course))
+     ->navbar_image('title-stellar')
+     ->breadcrumbs($Back, idName($id, $course));
+
+$page->content_begin();
+?>
+	
+	<div class="nonfocal">
+		<!-- The following orignial code was commented by Xioajing at 4:49pm on 07/14/09 to display Chinese character in the course title.
+		<h2><?=name($course)?> (<?=idName($id, $course)?>)</h2>
+	    -->
+		<!-- The following code was added by Xioajing at 4:49pm on 07/14/09 to display Chinese character in the course title.-->
+		<h2><?=$course[name]?> (<?=idName($id, $course)?>)</h2>
+	</div>
+	
+	<ul class="results">
+            <? if($has_classes) { ?>
+                <? foreach($classes as $class) { ?>
+                    <li><a href="<?=detailURL($class, selfURL())?>"><strong><?=longID($class)?></strong>: <?=className($class)?></a></li>
+                <? } ?>
+            <? } else { ?>
+                <li>No Stellar sites available for this department</li>
+            <? } ?>
+	</ul>
+
+<? $page->content_end(); ?>
+
